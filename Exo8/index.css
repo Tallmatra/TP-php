@@ -1,0 +1,25 @@
+*{
+    overflow: hidden;
+}
+body{
+    background-color: aqua;
+    margin: 45vh 75vh;
+    
+    font-size: 2rem;
+}
+#nombre{
+
+
+border-style: solid;
+border-radius: 3vh;
+width: 30vh;
+height: 5vh;
+}
+#button{
+    border-style: solid;
+    border-radius: 2vh;
+    width: 10vh;
+    color: white;
+    background-color: brown;
+    font-size: 1.5rem;
+}
