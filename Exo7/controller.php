@@ -1,11 +1,12 @@
 <?php
- include_once("fonction.php");
 session_start();
+ include_once("fonction.php");
+
 if(isset($_POST["bouton"]))
 {
     $jour=$_POST["jour"];
     $mois=$_POST["mois"];
-    $anne=$_POST["annee"];
+    $annee=$_POST["annee"];
     $_SESSION['post']=$_POST;
     $arrError=[];
     validerjour($jour,"jour",$arrError);
@@ -13,7 +14,9 @@ if(isset($_POST["bouton"]))
     validerannee($annee,"annee",$arrError);
     if(count($arrError)==0)
     {
-      //afficher($jour,$mois,$anne);
+      
+      datesuivante($jour,$mois,$annee);
+      dateprecedente($jour,$mois,$annee);
     }
     else
     {

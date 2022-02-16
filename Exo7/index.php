@@ -29,7 +29,7 @@
       echo  $_SESSION['post']['annee']; else ''  ?>">
       <?php if(isset($_SESSION['error']['annee'])):?>
             <span style="color:red"><?php echo $_SESSION['error']['annee'] ?></span>
-      <?php endif?> <br><br>
+      <?php session_unset(); endif?> <br><br>
 <input type="submit" name="bouton" value="Entrer">
 
 

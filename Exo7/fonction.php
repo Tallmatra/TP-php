@@ -61,33 +61,79 @@ function validerannee($annee,$key,array &$arrError):void
         }
 
     }
+   function bissextile($annee):bool{
+       if(($annee % 400 == 0) || ($annee % 4 == 0 && $annee % 100 !=0)){
+        return true;
+       }
+   } 
+
+
 }
-function datesuivante($jour,$mois,$annee):void{
+function njour($mois,$annee):int{
+ if($mois==2)
+   {
+     if(bissextile($annee))
+       {
+         return 29;
+        }
+        else
+       { 
+         return 28;
+        }
+    }
+    elseif($mois==4 or $mois==6 or $mois==9 or $mois==11 ) 
+   {
+     return 30;
+
+    } 
+    else
+   {
+      return 31;
+    }
+
+
+}
+
+function datesuivante($jour,$mois,$annee):void
+{
     $n=njour($mois,$annee);
-    if($n!=$jour){
+
+    if($n!=$jour)
+    {
         $jour=$jour+1;
 
-    }else{
+    }else
+    {
         $jour=1;
-        if($mois=12){
+        if($mois=12)
+        {
             $mois=1;
             $annee=$annee+1;
-        }else{
+        }
+        else
+        {
             $mois++;
         }
     }
     echo "la date suivante est $jour/$mois/$annee";
     
 
-}function dateprecedente($jour,$mois,$annee):void{
-    if($jour!=1){
+}
+
+function dateprecedente($jour,$mois,$annee):void
+{
+    if($jour!=1)
+    {
         $jour=$jour-1;
-    }else{
-        if($mois==1){
+    }else
+    {
+        if($mois==1)
+        {
             $jour=31;
             $mois=12;
             $annee=$annee - 1;
-        }else{
+        }else
+        {
             $jour=njour($mois-1 ,$annee);
             $mois=$mois-1;
         }
